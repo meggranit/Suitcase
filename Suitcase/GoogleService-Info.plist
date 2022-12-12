@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>587849127699-4l9rejfga8t3gcu2k079niqp4do43esj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.587849127699-4l9rejfga8t3gcu2k079niqp4do43esj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJfSyEGynoBPkr6M969bPRA89ELDfNAG0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>587849127699</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.meghangranit.Suitcase</string>
+	<key>PROJECT_ID</key>
+	<string>suitcase-974ea</string>
+	<key>STORAGE_BUCKET</key>
+	<string>suitcase-974ea.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:587849127699:ios:8ef935f2f2a0f649ce6ce6</string>
+</dict>
+</plist>
