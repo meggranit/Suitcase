@@ -9,9 +9,13 @@ import SwiftUI
 
 struct MyTripsView: View {
     @EnvironmentObject var userViewModel: UserViewModel
+    @ObservedObject var tripObservedVM = TripViewModel()
     @StateObject var tripViewModel = TripViewModel()
     
+    
     var body: some View {
+        //let userEmail = UserViewModel.shared.currentUserID
+        //let docID = userViewModel.getCurrentUserID(email: userEmail)
        
         //List (viewModel.trips, id: \.id ) trip in {
         VStack {
@@ -28,6 +32,8 @@ struct MyTripsView: View {
                     .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
                     .cornerRadius(15)
                     .padding()
+                    //Text("\(userEmail)")
+                    //Text("\(docID)")
                     ScrollView{
                         ForEach(tripViewModel.trips, id: \.id) { trip in
                             NavigationLink{

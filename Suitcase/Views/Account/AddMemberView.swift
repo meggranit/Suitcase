@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct AddMemberView: View {
-    @State private var searchText = ""
+    @ObservedObject var userViewModel = UserViewModel()
+    @State var searchText = ""
+    
+    
         var body: some View {
-            NavigationStack {
-                Text("Searching for \(searchText)")
-                    .navigationTitle("Add Members")
+            NavigationView{
+                List($userViewModel.filteredUsers, id: \.id) {$user in
+                    NavigationLink(destination: MemberDetailView(user: $user)){
+                        MemberRowView(user: $user)
+                    }
+                }
+                .listStyle(.plain)
+                .navigationTitle("Add Friends")
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                    .onChange(of: searchText){searchText in
+                        if !searchText.isEmpty {
+                            userViewModel.filteredUsers = userViewModel.users.filter {
+                                $0.name.contains(searchText) }
+                        } else {
+                            userViewModel.filteredUsers = userViewModel.users
+                        }
+                    }
             }
-            .searchable(text: $searchText)
+            .padding()
         }
 }
 

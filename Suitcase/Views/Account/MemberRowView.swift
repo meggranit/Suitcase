@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemberRowView: View {
-    var user: User
+    @Binding var user: User
     var body: some View {
         VStack{
             HStack{
@@ -30,8 +30,8 @@ struct MemberRowView: View {
 }
 
 struct MemberRowView_Previews: PreviewProvider {
+    @State static var customBinding = User(id: "12345", name: "meg", email: "meg@email.com")
     static var previews: some View {
-        MemberRowView(user: User(id: "1234", name: "meg", email: "meg@email.com"))
-       
+        MemberRowView(user: $customBinding)
     }
 }

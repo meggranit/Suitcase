@@ -8,44 +8,49 @@
 import SwiftUI
 
 struct SelectedTripView: View {
+    @EnvironmentObject var userViewModel : UserViewModel
     var body: some View {
-        VStack{
-            NavigationLink {
-                ChatView()
-            } label: {
-                Label("Chat", systemImage: "message" )
-                    .foregroundColor(Color.white)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 20)
+        NavigationView{
+            VStack{
+                MapView()
+                NavigationLink {
+                    ChatView()
+                } label: {
+                    Label("Chat", systemImage: "message" )
+                        .foregroundColor(Color.white)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
                     
-            }
-            .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
-            .cornerRadius(15)
-            .padding()
-            NavigationLink {
-                ListEventsView()
-            } label: {
-                Label("Plans", systemImage: "calendar")
-                    .foregroundColor(Color.white)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 20)
-            }
-            .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
-            .cornerRadius(15)
-            .padding()
-            NavigationLink {
-                ListMembersView()
-            } label: {
-                Label("Members", systemImage: "person" )
-                    .foregroundColor(Color.white)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 20)
+                }
+                .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
+                .cornerRadius(15)
+                .padding()
+                NavigationLink {
+                    ListEventsView()
+                } label: {
+                    Label("Plans", systemImage: "calendar")
+                        .foregroundColor(Color.white)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
+                }
+                .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
+                .cornerRadius(15)
+                .padding()
+                
+                NavigationLink {
+                    AddMemberView()
+                } label: {
+                    Label("Members", systemImage: "person" )
+                        .foregroundColor(Color.white)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
                     
+                }
+                .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
+                .cornerRadius(15)
+                .padding()
+                
             }
-            .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
-            .cornerRadius(15)
-            .padding()
-            
         }
     }
 }

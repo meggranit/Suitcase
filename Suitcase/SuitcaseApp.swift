@@ -12,6 +12,7 @@ import Firebase
 
 @main
 struct SuitcaseApp: App {
+    @StateObject var locationViewModel = LocationViewModel()
     init() {
         FirebaseApp.configure()
 
@@ -21,6 +22,7 @@ struct SuitcaseApp: App {
             let userViewModel = UserViewModel()
             ContentView()
                 .environmentObject(userViewModel)
+                .environmentObject(locationViewModel)
         }
     }
 }

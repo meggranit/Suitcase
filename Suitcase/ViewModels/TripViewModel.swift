@@ -12,16 +12,24 @@ import FirebaseCore
 import SwiftUI
 import FirebaseFirestoreSwift
 
+let kTripInfoUpdated = "com.meghangranit.Suitcase.updated"
+
 class TripViewModel: ObservableObject {
-    @Published private(set) var trips = [Trip]()
+    @Published var trips = [Trip]()
     let db = Firestore.firestore()
     
+    
     init() {
+        let userID = "mWQXNGdncm2dpAzyQeUr"
+        //let userID = UserViewModel.shared.currentUserID
         getTrips()
+        //observeAllTrips(userID: userID)
+        
     }
     
     func getTrips() {
-        db.collection("users/mWQXNGdncm2dpAzyQeUr/Trips").addSnapshotListener{ querySnapshot, error in
+        let userID = UserViewModel.shared.currentUserID
+        db.collection("users/\(userID)/Trips").addSnapshotListener{ querySnapshot, error in
             guard let documents = querySnapshot?.documents else {
                 print("error fetching documents: \(String(describing: error))")
                 return
@@ -42,6 +50,29 @@ class TripViewModel: ObservableObject {
         db.collection("users/mWQXNGdncm2dpAzyQeUr/Trips").addDocument(data: ["tripName": tripName, "location": location, "startDate": startDate, "endDate": endDate])
     }
     
+    func observeAllTrips (userID: String) {
+        
+        let queryCollection = Firestore.firestore().collection("users/\(userID)/Trips")
+        queryCollection.addSnapshotListener { (querySnapshot, err) in
+           
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.trips = []
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                   
+                    if let aTrip = Trip(data: document.data(), documentID: document.documentID) {
+                        print (aTrip)
+                        self.trips.append(aTrip)
+                    }
+                    
+                    
+                }
+                NotificationCenter.default.post(name: Notification.Name(rawValue: kTripInfoUpdated), object: self)
+            }
+        }
+    }
     
     
     /*

@@ -14,10 +14,11 @@ struct ListMembersView: View {
         VStack {
             NavigationStack{
                 VStack{
+                    AddMemberView()
                     ScrollView{
-                        ForEach(userStateObject.users, id: \.id) { user in
-                            MemberRowView(user: user)
-                        }
+                        //ForEach(userStateObject.users, id: \.id) { user in
+                           // MemberRowView(user: user)
+                        //}
                     }
                 }
                 .navigationTitle("Friends")
