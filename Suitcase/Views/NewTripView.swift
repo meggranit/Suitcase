@@ -44,13 +44,13 @@ struct NewTripView: View {
                 DatePicker(
                     "Start Date",
                     selection: $startDate,
-                    displayedComponents: [.date, .hourAndMinute]
+                    displayedComponents: [.date]
                 )
                 .padding(.horizontal, 50.0)
                 DatePicker(
                     "End Date",
                     selection: $endDate,
-                    displayedComponents: [.date, .hourAndMinute]
+                    displayedComponents: [.date]
                 )
                 .padding(.horizontal, 50.0)
                 .padding(.bottom, 40.0)
