@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct SelectedTripView: View {
-    @EnvironmentObject var userViewModel : UserViewModel
+    //@EnvironmentObject var userViewModel : UserViewModel
+    
+    @StateObject var tdvm = TripDetailViewModel()
+    @Binding var trip: Trip
+    
     var body: some View {
         NavigationView{
             VStack{
-                MapView()
+                Text(trip.tripName)
+                Text(trip.documentID!)
+                //MapView()
                 NavigationLink {
                     ChatView()
                 } label: {
@@ -26,7 +32,7 @@ struct SelectedTripView: View {
                 .cornerRadius(15)
                 .padding()
                 NavigationLink {
-                    ListEventsView()
+                    ListEventsView(tripID: $trip.documentID)
                 } label: {
                     Label("Plans", systemImage: "calendar")
                         .foregroundColor(Color.white)
@@ -56,7 +62,8 @@ struct SelectedTripView: View {
 }
 
 struct SelectedTripView_Previews: PreviewProvider {
+    @State static var customBinding = Trip(id: "12345", tripName: "Summer!", longitude: "21.0", latitude: "-43.1", startDate: Date().formatted(), endDate: Date().formatted())
     static var previews: some View {
-        SelectedTripView()
+        SelectedTripView(trip: $customBinding)
     }
 }

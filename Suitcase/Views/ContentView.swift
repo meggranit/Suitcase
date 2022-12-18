@@ -9,19 +9,22 @@ import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {
-    @EnvironmentObject var userViewModel: UserViewModel
+    //@ObservedObject var userViewModel = LoginViewModel()
+    //@EnvironmentObject var userViewModel: UserViewModel
+    
+    
     var body: some View {
-        
-        NavigationView {
-            if userViewModel.signedIn {
-                MyTripsView()
-            }
-            else {
-                LoginView()
-            }
-        }
-        .onAppear {
-            userViewModel.signedIn = userViewModel.isSignedIn
+        TabView{
+            MyTripsView()
+                .tabItem {
+                    Text("My Trips")
+                }
+            
+            InvitedTripsView()
+                .tabItem {
+                    Text("Invited")
+                }
+            
         }
     }
 }

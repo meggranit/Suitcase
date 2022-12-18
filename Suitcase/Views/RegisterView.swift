@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
     
-    @EnvironmentObject var viewModel: UserViewModel
+    @Environment(\.dismiss) var dismiss
+    
+    @State var name: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
+    
+    //@EnvironmentObject var viewModel: UserViewModel
+    
+    let registerVM = RegisterViewModel()
     
     var body: some View {
         VStack {
@@ -58,7 +63,7 @@ struct RegisterView: View {
                 guard !name.isEmpty, !email.isEmpty, !password.isEmpty else {
                     return
                 }
-                viewModel.signUp(name: name, email: email, password: password)
+                registerVM.registerNewUser(name: name,  email: email, password: password)
             } label: {
                 Text("Register")
                     .foregroundColor(Color.white)
@@ -69,7 +74,10 @@ struct RegisterView: View {
             .cornerRadius(15)
             .padding()
         
-            
+            Text(registerVM.message)
+            Button("Done"){
+                dismiss()
+            }
             Spacer()
         }
         

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct NewEventView: View {
-    @StateObject var planViewModel = PlansViewModel()
+    
     
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
     
+    let newPlanVM = NewPlanViewModel()
     var body: some View {
         VStack{
             Text("New Plan")
@@ -52,7 +53,7 @@ struct NewEventView: View {
                 )
             .padding(.horizontal, 50.0)
             .padding(.bottom, 40.0)
-            Button(action: { planViewModel.addPlans(eventName: name, eventDescription: description, addedBy: "userName", startDate: startDate, endDate: endDate) }) {
+            Button(action: { newPlanVM.addPlan(id: "", eventName: "", eventDescription: "", addedBy: "", startDate: "", endDate: "")  }) {
                 Text("add")
                     .foregroundColor(Color.white)
                     .padding(.vertical, 10)

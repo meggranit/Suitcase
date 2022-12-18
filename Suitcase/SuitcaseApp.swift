@@ -7,22 +7,29 @@
 
 import SwiftUI
 import FirebaseCore
-import Firebase
 
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
+}
 
 @main
 struct SuitcaseApp: App {
-    @StateObject var locationViewModel = LocationViewModel()
-    init() {
-        FirebaseApp.configure()
-
-    }
+    // register app delegate for Firebase setup
+      @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    //@StateObject var locationViewModel = LocationViewModel()
+   
     var body: some Scene {
         WindowGroup {
-            let userViewModel = UserViewModel()
-            ContentView()
-                .environmentObject(userViewModel)
-                .environmentObject(locationViewModel)
+            //let userViewModel = UserViewModel()
+            //NewTripView(name: "", location: "", startDate: Date(), endDate: Date())
+            LoginView()
+                //.environmentObject(locationViewModel)
         }
     }
 }

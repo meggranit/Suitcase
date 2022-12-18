@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct LocationSearchView: View {
+    @EnvironmentObject var locationViewModel: LocationViewModel
+    
     var body: some View {
         HStack {
-            Text("Add Location")
-                .foregroundColor(Color(.darkGray))
-                .padding(.horizontal, 30)
+            if locationViewModel.selectedLocationCoordinate?.latitude.formatted() != "" && locationViewModel.selectedLocationCoordinate?.longitude.formatted() != "" {
+                Text(locationViewModel.results.first?.title ?? "Add Location")
+                    .foregroundColor(Color(.darkGray))
+                    .padding(.horizontal, 30)
+            }
+            else {
+                Text("Add Location")
+                    .foregroundColor(Color(.darkGray))
+                    .padding(.horizontal, 30)
+            }
             Spacer()
         }
         .frame(width: UIScreen.main.bounds.width - 64, height: 50)

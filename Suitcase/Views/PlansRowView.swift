@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlansRowView: View {
-    var plan: Plans
+    var plan: Plan
     var body: some View {
         VStack{
             HStack{
@@ -18,9 +18,9 @@ struct PlansRowView: View {
             }
             .padding(.horizontal, 20.0)
             HStack{
-                Text("\(plan.startDate.formatted(.dateTime.hour().minute()))")
+                Text(plan.startDate)
                 Text(" - ")
-                Text("\(plan.endDate.formatted(.dateTime.hour().minute()))")
+                Text(plan.endDate)
                 Spacer()
             }
             .font(.footnote)
@@ -31,6 +31,6 @@ struct PlansRowView: View {
 
 struct PlansRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PlansRowView(plan: Plans(id: "1234", eventName: "Dinner", eventDescription: "celebrating the holiday", addedBy: "user2", startDate: Date(), endDate: Date()))
+        PlansRowView(plan: Plan(id: "1234", eventName: "Dinner", eventDescription: "celebrating the holiday", addedBy: "user2", startDate: "", endDate: ""))
     }
 }

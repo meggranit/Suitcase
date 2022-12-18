@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C21E2CC293E81EC0071B8EC /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2CB293E81EC0071B8EC /* TripViewModel.swift */; };
 		0C21E2CE293E8E7E0071B8EC /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2CD293E8E7E0071B8EC /* TripModel.swift */; };
-		0C21E2D3293E98AC0071B8EC /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2D2293E98AC0071B8EC /* MessageBubble.swift */; };
 		0C21E2D5293EAEC30071B8EC /* PlansModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2D4293EAEC30071B8EC /* PlansModel.swift */; };
-		0C21E2DA293EB8130071B8EC /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2D9293EB8130071B8EC /* MessageField.swift */; };
 		0C21E2DD293EC0660071B8EC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C21E2DC293EC0660071B8EC /* FirebaseFirestoreSwift */; };
-		0C21E2DF293F8ED40071B8EC /* PlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2DE293F8ED40071B8EC /* PlansViewModel.swift */; };
 		0C21E2E1293F90180071B8EC /* PlansRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21E2E0293F90180071B8EC /* PlansRowView.swift */; };
 		0C3A4D152944D109000FEEEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A4D142944D109000FEEEF /* UserModel.swift */; };
 		0C3A4D172944D35B000FEEEF /* MemberRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A4D162944D35B000FEEEF /* MemberRowView.swift */; };
 		0C3A4D192944D772000FEEEF /* SelectedTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A4D182944D772000FEEEF /* SelectedTripView.swift */; };
+		0C5F0F1C294E06590007BBDF /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F1B294E06590007BBDF /* Plan.swift */; };
+		0C5F0F1E294E0A280007BBDF /* NewPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F1D294E0A280007BBDF /* NewPlanViewModel.swift */; };
+		0C5F0F20294E0AE80007BBDF /* PlanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F1F294E0AE80007BBDF /* PlanDetailViewModel.swift */; };
+		0C5F0F22294E0B1D0007BBDF /* PlanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F21294E0B1D0007BBDF /* PlanListViewModel.swift */; };
 		0C646A21292DC1E30012F40F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C646A20292DC1E30012F40F /* GoogleService-Info.plist */; };
 		0C7C70A7294AA3BD0029A0F6 /* MemberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */; };
+		0C921F02294E2EB400CD2A76 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C921F01294E2EB400CD2A76 /* ChatView.swift */; };
 		0C9CB6A1292D30A5006CF7AD /* SuitcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6A0292D30A5006CF7AD /* SuitcaseApp.swift */; };
 		0C9CB6A5292D30A7006CF7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9CB6A4292D30A7006CF7AD /* Assets.xcassets */; };
 		0C9CB6A8292D30A7006CF7AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9CB6A7292D30A7006CF7AD /* Preview Assets.xcassets */; };
@@ -33,9 +34,7 @@
 		0C9CB6BE292D313A006CF7AD /* InvitedTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6BD292D313A006CF7AD /* InvitedTripsView.swift */; };
 		0C9CB6C0292D3147006CF7AD /* EditTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6BF292D3147006CF7AD /* EditTripView.swift */; };
 		0C9CB6C2292D3151006CF7AD /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6C1292D3151006CF7AD /* EditEventView.swift */; };
-		0C9CB6C4292D315C006CF7AD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6C3292D315C006CF7AD /* ChatView.swift */; };
 		0C9CB6C6292D3166006CF7AD /* AddMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6C5292D3166006CF7AD /* AddMemberView.swift */; };
-		0C9CB6CA292D31F8006CF7AD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6C9292D31F8006CF7AD /* UserViewModel.swift */; };
 		0C9CB6CD292D3914006CF7AD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9CB6CC292D3914006CF7AD /* FirebaseAnalytics */; };
 		0C9CB6CF292D3914006CF7AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9CB6CE292D3914006CF7AD /* FirebaseAuth */; };
 		0C9CB6D1292D3914006CF7AD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0C9CB6D0292D3914006CF7AD /* FirebaseFirestore */; };
@@ -51,23 +50,30 @@
 		0CCBB314294BD70E00ABC4C7 /* LocationSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB313294BD70E00ABC4C7 /* LocationSearchCell.swift */; };
 		0CCBB316294BD98D00ABC4C7 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB315294BD98D00ABC4C7 /* MapButton.swift */; };
 		0CCBB318294BE26A00ABC4C7 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB317294BE26A00ABC4C7 /* LocationViewModel.swift */; };
+		0CCBB31D294C0B0500ABC4C7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB31C294C0B0500ABC4C7 /* LoginViewModel.swift */; };
+		0CCBB31F294C0B7800ABC4C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB31E294C0B7800ABC4C7 /* User.swift */; };
+		0CCBB321294C107000ABC4C7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB320294C107000ABC4C7 /* RegisterViewModel.swift */; };
+		0CCBB323294C17E700ABC4C7 /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB322294C17E700ABC4C7 /* TripListViewModel.swift */; };
+		0CCBB325294C186C00ABC4C7 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB324294C186C00ABC4C7 /* Trip.swift */; };
+		0CCBB327294C1CE100ABC4C7 /* TripDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB326294C1CE100ABC4C7 /* TripDetailViewModel.swift */; };
+		0CCBB329294C2AC300ABC4C7 /* NewTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBB328294C2AC300ABC4C7 /* NewTripViewModel.swift */; };
 		0CD8437F293A6A67009801A8 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8437E293A6A67009801A8 /* ChatModel.swift */; };
-		0CD84383293A6CE8009801A8 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD84382293A6CE8009801A8 /* ChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C21E2CB293E81EC0071B8EC /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
 		0C21E2CD293E8E7E0071B8EC /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
-		0C21E2D2293E98AC0071B8EC /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		0C21E2D4293EAEC30071B8EC /* PlansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansModel.swift; sourceTree = "<group>"; };
-		0C21E2D9293EB8130071B8EC /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
-		0C21E2DE293F8ED40071B8EC /* PlansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansViewModel.swift; sourceTree = "<group>"; };
 		0C21E2E0293F90180071B8EC /* PlansRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansRowView.swift; sourceTree = "<group>"; };
 		0C3A4D142944D109000FEEEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0C3A4D162944D35B000FEEEF /* MemberRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRowView.swift; sourceTree = "<group>"; };
 		0C3A4D182944D772000FEEEF /* SelectedTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTripView.swift; sourceTree = "<group>"; };
+		0C5F0F1B294E06590007BBDF /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		0C5F0F1D294E0A280007BBDF /* NewPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlanViewModel.swift; sourceTree = "<group>"; };
+		0C5F0F1F294E0AE80007BBDF /* PlanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewModel.swift; sourceTree = "<group>"; };
+		0C5F0F21294E0B1D0007BBDF /* PlanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanListViewModel.swift; sourceTree = "<group>"; };
 		0C646A20292DC1E30012F40F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailView.swift; sourceTree = "<group>"; };
+		0C921F01294E2EB400CD2A76 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		0C9CB69D292D30A5006CF7AD /* Suitcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suitcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9CB6A0292D30A5006CF7AD /* SuitcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseApp.swift; sourceTree = "<group>"; };
 		0C9CB6A4292D30A7006CF7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,9 +88,7 @@
 		0C9CB6BD292D313A006CF7AD /* InvitedTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitedTripsView.swift; sourceTree = "<group>"; };
 		0C9CB6BF292D3147006CF7AD /* EditTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripView.swift; sourceTree = "<group>"; };
 		0C9CB6C1292D3151006CF7AD /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
-		0C9CB6C3292D315C006CF7AD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		0C9CB6C5292D3166006CF7AD /* AddMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberView.swift; sourceTree = "<group>"; };
-		0C9CB6C9292D31F8006CF7AD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		0CA997E22936706D00F5DE38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0CC846BB292D538400679EEC /* TripRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRowView.swift; sourceTree = "<group>"; };
 		0CCBB305294BC55300ABC4C7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -96,8 +100,14 @@
 		0CCBB313294BD70E00ABC4C7 /* LocationSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCell.swift; sourceTree = "<group>"; };
 		0CCBB315294BD98D00ABC4C7 /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		0CCBB317294BE26A00ABC4C7 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		0CCBB31C294C0B0500ABC4C7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0CCBB31E294C0B7800ABC4C7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0CCBB320294C107000ABC4C7 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		0CCBB322294C17E700ABC4C7 /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
+		0CCBB324294C186C00ABC4C7 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		0CCBB326294C1CE100ABC4C7 /* TripDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewModel.swift; sourceTree = "<group>"; };
+		0CCBB328294C2AC300ABC4C7 /* NewTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewModel.swift; sourceTree = "<group>"; };
 		0CD8437E293A6A67009801A8 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
-		0CD84382293A6CE8009801A8 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,58 +127,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C21E2CF293E974D0071B8EC /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				0C9CB6C3292D315C006CF7AD /* ChatView.swift */,
-				0C21E2D2293E98AC0071B8EC /* MessageBubble.swift */,
-				0C21E2D9293EB8130071B8EC /* MessageField.swift */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		0C21E2D6293EB3BC0071B8EC /* Plans */ = {
-			isa = PBXGroup;
-			children = (
-				0C9CB6BB292D312E006CF7AD /* ListEventsView.swift */,
-				0C9CB6C1292D3151006CF7AD /* EditEventView.swift */,
-				0C9CB6B3292D30F8006CF7AD /* NewEventView.swift */,
-				0C21E2E0293F90180071B8EC /* PlansRowView.swift */,
-			);
-			path = Plans;
-			sourceTree = "<group>";
-		};
-		0C21E2D7293EB3C90071B8EC /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				0C9CB6B7292D3118006CF7AD /* LoginView.swift */,
-				0C9CB6AF292D30E3006CF7AD /* RegisterView.swift */,
-				0C9CB6B9292D3123006CF7AD /* ListMembersView.swift */,
-				0C9CB6C5292D3166006CF7AD /* AddMemberView.swift */,
-				0C3A4D162944D35B000FEEEF /* MemberRowView.swift */,
-				0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
-		0C21E2D8293EB3E10071B8EC /* Trip */ = {
-			isa = PBXGroup;
-			children = (
-				0C9CB6B1292D30EE006CF7AD /* NewTripView.swift */,
-				0C9CB6B5292D310C006CF7AD /* MyTripsView.swift */,
-				0C9CB6BF292D3147006CF7AD /* EditTripView.swift */,
-				0CC846BB292D538400679EEC /* TripRowView.swift */,
-				0C9CB6BD292D313A006CF7AD /* InvitedTripsView.swift */,
-				0C3A4D182944D772000FEEEF /* SelectedTripView.swift */,
-			);
-			path = Trip;
-			sourceTree = "<group>";
-		};
 		0C21E2DB293EC0660071B8EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C5F0F18294DEEA50007BBDF /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0C921F01294E2EB400CD2A76 /* ChatView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		0C9CB694292D30A5006CF7AD = {
@@ -191,12 +162,13 @@
 		0C9CB69F292D30A5006CF7AD /* Suitcase */ = {
 			isa = PBXGroup;
 			children = (
+				0C5F0F18294DEEA50007BBDF /* Chat */,
+				0C9CB6C8292D31E5006CF7AD /* Models */,
+				0CCBB31B294C0AF200ABC4C7 /* ViewModels */,
+				0CCBB31A294C0AA900ABC4C7 /* Views */,
 				0CCBB30C294BCD8000ABC4C7 /* Info.plist */,
 				0CCBB309294BC6D800ABC4C7 /* Map */,
 				0C646A20292DC1E30012F40F /* GoogleService-Info.plist */,
-				0C9CB6C8292D31E5006CF7AD /* Models */,
-				0C9CB6C7292D31DC006CF7AD /* ViewModels */,
-				0C9CB6AE292D30D3006CF7AD /* Views */,
 				0C9CB6A0292D30A5006CF7AD /* SuitcaseApp.swift */,
 				0C9CB6A4292D30A7006CF7AD /* Assets.xcassets */,
 				0C9CB6A6292D30A7006CF7AD /* Preview Content */,
@@ -212,36 +184,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0C9CB6AE292D30D3006CF7AD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0CA997E22936706D00F5DE38 /* ContentView.swift */,
-				0C21E2D8293EB3E10071B8EC /* Trip */,
-				0C21E2D7293EB3C90071B8EC /* Account */,
-				0C21E2D6293EB3BC0071B8EC /* Plans */,
-				0C21E2CF293E974D0071B8EC /* Chat */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		0C9CB6C7292D31DC006CF7AD /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				0C9CB6C9292D31F8006CF7AD /* UserViewModel.swift */,
-				0CD84382293A6CE8009801A8 /* ChatViewModel.swift */,
-				0C21E2CB293E81EC0071B8EC /* TripViewModel.swift */,
-				0C21E2DE293F8ED40071B8EC /* PlansViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		0C9CB6C8292D31E5006CF7AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0CCBB324294C186C00ABC4C7 /* Trip.swift */,
+				0CCBB31E294C0B7800ABC4C7 /* User.swift */,
 				0CD8437E293A6A67009801A8 /* ChatModel.swift */,
 				0C21E2CD293E8E7E0071B8EC /* TripModel.swift */,
 				0C21E2D4293EAEC30071B8EC /* PlansModel.swift */,
 				0C3A4D142944D109000FEEEF /* UserModel.swift */,
+				0C5F0F1B294E06590007BBDF /* Plan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +211,45 @@
 				0CCBB317294BE26A00ABC4C7 /* LocationViewModel.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		0CCBB31A294C0AA900ABC4C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CA997E22936706D00F5DE38 /* ContentView.swift */,
+				0C9CB6B1292D30EE006CF7AD /* NewTripView.swift */,
+				0C9CB6B5292D310C006CF7AD /* MyTripsView.swift */,
+				0C3A4D182944D772000FEEEF /* SelectedTripView.swift */,
+				0C9CB6AF292D30E3006CF7AD /* RegisterView.swift */,
+				0C9CB6B7292D3118006CF7AD /* LoginView.swift */,
+				0CC846BB292D538400679EEC /* TripRowView.swift */,
+				0C9CB6BF292D3147006CF7AD /* EditTripView.swift */,
+				0C9CB6BD292D313A006CF7AD /* InvitedTripsView.swift */,
+				0C9CB6BB292D312E006CF7AD /* ListEventsView.swift */,
+				0C9CB6C1292D3151006CF7AD /* EditEventView.swift */,
+				0C9CB6B3292D30F8006CF7AD /* NewEventView.swift */,
+				0C21E2E0293F90180071B8EC /* PlansRowView.swift */,
+				0C9CB6B9292D3123006CF7AD /* ListMembersView.swift */,
+				0C9CB6C5292D3166006CF7AD /* AddMemberView.swift */,
+				0C3A4D162944D35B000FEEEF /* MemberRowView.swift */,
+				0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0CCBB31B294C0AF200ABC4C7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0CCBB31C294C0B0500ABC4C7 /* LoginViewModel.swift */,
+				0CCBB320294C107000ABC4C7 /* RegisterViewModel.swift */,
+				0CCBB322294C17E700ABC4C7 /* TripListViewModel.swift */,
+				0CCBB326294C1CE100ABC4C7 /* TripDetailViewModel.swift */,
+				0CCBB328294C2AC300ABC4C7 /* NewTripViewModel.swift */,
+				0C5F0F1D294E0A280007BBDF /* NewPlanViewModel.swift */,
+				0C5F0F1F294E0AE80007BBDF /* PlanDetailViewModel.swift */,
+				0C5F0F21294E0B1D0007BBDF /* PlanListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,43 +334,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5F0F22294E0B1D0007BBDF /* PlanListViewModel.swift in Sources */,
 				0C3A4D172944D35B000FEEEF /* MemberRowView.swift in Sources */,
 				0C21E2E1293F90180071B8EC /* PlansRowView.swift in Sources */,
 				0CCBB318294BE26A00ABC4C7 /* LocationViewModel.swift in Sources */,
+				0C921F02294E2EB400CD2A76 /* ChatView.swift in Sources */,
 				0C9CB6B2292D30EE006CF7AD /* NewTripView.swift in Sources */,
-				0C21E2DA293EB8130071B8EC /* MessageField.swift in Sources */,
 				0CCBB316294BD98D00ABC4C7 /* MapButton.swift in Sources */,
 				0CCBB30E294BD28600ABC4C7 /* LocationSearchView.swift in Sources */,
 				0CCBB30B294BCCBA00ABC4C7 /* LocationManager.swift in Sources */,
 				0CCBB314294BD70E00ABC4C7 /* LocationSearchCell.swift in Sources */,
 				0C9CB6BE292D313A006CF7AD /* InvitedTripsView.swift in Sources */,
 				0CA997E32936706D00F5DE38 /* ContentView.swift in Sources */,
+				0CCBB321294C107000ABC4C7 /* RegisterViewModel.swift in Sources */,
+				0CCBB325294C186C00ABC4C7 /* Trip.swift in Sources */,
 				0C9CB6B8292D3118006CF7AD /* LoginView.swift in Sources */,
 				0CCBB306294BC55300ABC4C7 /* MapView.swift in Sources */,
-				0C21E2CC293E81EC0071B8EC /* TripViewModel.swift in Sources */,
 				0C3A4D192944D772000FEEEF /* SelectedTripView.swift in Sources */,
 				0CD8437F293A6A67009801A8 /* ChatModel.swift in Sources */,
+				0C5F0F1C294E06590007BBDF /* Plan.swift in Sources */,
+				0C5F0F1E294E0A280007BBDF /* NewPlanViewModel.swift in Sources */,
 				0CCBB312294BD5BA00ABC4C7 /* LocationListView.swift in Sources */,
 				0C9CB6BA292D3123006CF7AD /* ListMembersView.swift in Sources */,
 				0C9CB6C0292D3147006CF7AD /* EditTripView.swift in Sources */,
 				0C9CB6C2292D3151006CF7AD /* EditEventView.swift in Sources */,
-				0C9CB6C4292D315C006CF7AD /* ChatView.swift in Sources */,
 				0C9CB6B0292D30E3006CF7AD /* RegisterView.swift in Sources */,
 				0C21E2D5293EAEC30071B8EC /* PlansModel.swift in Sources */,
-				0CD84383293A6CE8009801A8 /* ChatViewModel.swift in Sources */,
 				0C9CB6C6292D3166006CF7AD /* AddMemberView.swift in Sources */,
 				0CC846BC292D538400679EEC /* TripRowView.swift in Sources */,
+				0CCBB31F294C0B7800ABC4C7 /* User.swift in Sources */,
 				0C9CB6BC292D312E006CF7AD /* ListEventsView.swift in Sources */,
+				0CCBB323294C17E700ABC4C7 /* TripListViewModel.swift in Sources */,
+				0C5F0F20294E0AE80007BBDF /* PlanDetailViewModel.swift in Sources */,
 				0C3A4D152944D109000FEEEF /* UserModel.swift in Sources */,
-				0C21E2DF293F8ED40071B8EC /* PlansViewModel.swift in Sources */,
 				0C7C70A7294AA3BD0029A0F6 /* MemberDetailView.swift in Sources */,
 				0C9CB6B6292D310C006CF7AD /* MyTripsView.swift in Sources */,
 				0C21E2CE293E8E7E0071B8EC /* TripModel.swift in Sources */,
 				0CCBB308294BC5AB00ABC4C7 /* MapRepresentable.swift in Sources */,
 				0C9CB6B4292D30F8006CF7AD /* NewEventView.swift in Sources */,
-				0C9CB6CA292D31F8006CF7AD /* UserViewModel.swift in Sources */,
 				0C9CB6A1292D30A5006CF7AD /* SuitcaseApp.swift in Sources */,
-				0C21E2D3293E98AC0071B8EC /* MessageBubble.swift in Sources */,
+				0CCBB31D294C0B0500ABC4C7 /* LoginViewModel.swift in Sources */,
+				0CCBB327294C1CE100ABC4C7 /* TripDetailViewModel.swift in Sources */,
+				0CCBB329294C2AC300ABC4C7 /* NewTripViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,11 +509,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Suitcase/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Suitcase to access your location";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,11 +540,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Suitcase/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Suitcase to access your location";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

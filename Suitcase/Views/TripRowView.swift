@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TripRowView: View {
+    @Binding var trip: Trip
+    
     //@State var thisTrip: Trip
-    var trip: Trip
+    //var trip: Trip
     var body: some View {
         VStack{
             HStack{
@@ -19,9 +21,9 @@ struct TripRowView: View {
             }
             .padding(.horizontal, 20.0)
             HStack{
-                Text("\(trip.startDate.formatted(.dateTime.hour().minute()))")
+                //ext("\(trip.startDate.formatted(.dateTime.hour().minute()))")
                 Text(" - ")
-                Text("\(trip.endDate.formatted(.dateTime.hour().minute()))")
+                //Text("\(trip.endDate.formatted(.dateTime.hour().minute()))")
                 Spacer()
             }
             .font(.footnote)
@@ -34,8 +36,8 @@ struct TripRowView: View {
 }
 
 struct TripRowView_Previews: PreviewProvider {
+    @State static var customBinding = Trip(id: "12345", tripName: "Spring Break", longitude: "11", latitude: "-42", startDate: Date().formatted(), endDate: Date().formatted())
     static var previews: some View {
-        TripRowView(trip: Trip(id: "12345", tripName: "Spring Break", location: "Boston", startDate: Date(), endDate: Date()))
-        //TripRowView(thisTrip: Trip(id: "1234", name: ""))
+        TripRowView(trip: $customBinding)
     }
 }
