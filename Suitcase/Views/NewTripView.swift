@@ -10,7 +10,7 @@ import SwiftUI
 struct NewTripView: View {
     //@StateObject var tripViewModel = TripViewModel()
     @State private var showLocationSearchView = true
-    //@EnvironmentObject var locationViewModel: LocationViewModel
+    @EnvironmentObject var locationViewModel: LocationViewModel
     
     @State var name: String
     @State var location: String
@@ -40,14 +40,6 @@ struct NewTripView: View {
                 .padding(5)
                 .padding(.horizontal, 80.0)
                 .padding(.bottom, 20.0)
-                TextField(
-                    "location",
-                    text: $location
-                )
-                .textFieldStyle(.roundedBorder)
-                .padding(5)
-                .padding(.horizontal, 80.0)
-                .padding(.bottom, 25.0)
                 
                 DatePicker(
                     "Start Date",
@@ -65,7 +57,7 @@ struct NewTripView: View {
                 
                 
                 Button(action: {
-                    newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: "", latitude: "", startDate: startDate.formatted(), endDate: endDate.formatted())
+                    newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: (locationViewModel.selectedLocationCoordinate?.longitude.formatted())!, latitude: (locationViewModel.selectedLocationCoordinate?.latitude.formatted())!, startDate: startDate.formatted(), endDate: endDate.formatted())
                     self.presentationMode.wrappedValue.dismiss()
                     //newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: locationViewModel.selectedLocationCoordinate?.longitude, latitude: locationViewModel.selectedLocationCoordinate?.latitude, startDate: startDate, endDate: endDate)
                 }) {
@@ -80,7 +72,8 @@ struct NewTripView: View {
                 
                 Spacer()
             }
-            /*
+            
+            
             if !showLocationSearchView {
                 LocationListView(showLocationSearchView: $showLocationSearchView)
             } else {
@@ -108,7 +101,7 @@ struct NewTripView: View {
                     .padding(.top, 4)
                 Spacer()
             }
-             */
+            
             
         }
         

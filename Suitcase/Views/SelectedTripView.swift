@@ -9,16 +9,16 @@ import SwiftUI
 
 struct SelectedTripView: View {
     //@EnvironmentObject var userViewModel : UserViewModel
-    
+    @State private var showLocationSearchView = true
+    //@StateObject var locationViewModel: LocationViewModel
     @StateObject var tdvm = TripDetailViewModel()
     @Binding var trip: Trip
-    
     var body: some View {
-        NavigationView{
+        ZStack{
             VStack{
+                Spacer()
                 Text(trip.tripName)
                 Text(trip.documentID!)
-                //MapView()
                 NavigationLink {
                     ChatView()
                 } label: {
@@ -32,7 +32,7 @@ struct SelectedTripView: View {
                 .cornerRadius(15)
                 .padding()
                 NavigationLink {
-                    ListEventsView(tripID: $trip.documentID)
+                    ListEventsView(tripID: trip.documentID)
                 } label: {
                     Label("Plans", systemImage: "calendar")
                         .foregroundColor(Color.white)
@@ -57,6 +57,36 @@ struct SelectedTripView: View {
                 .padding()
                 
             }
+            
+            /*
+            if !showLocationSearchView {
+                LocationListView(showLocationSearchView: $showLocationSearchView)
+            } else {
+                VStack{
+                    ZStack{
+                        MapRepresentable()
+                            .frame(height: 180)
+                        LocationSearchView()
+                            .padding(.top, 72)
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    showLocationSearchView.toggle()
+                                }
+                            }
+                            .padding(.top, 50)
+                        
+                    }
+                    Spacer()
+                }
+            }
+            
+            VStack{
+                MapButton(showLocationSearchView: $showLocationSearchView)
+                    .padding(.leading)
+                    .padding(.top, 4)
+                Spacer()
+            }
+            */
         }
     }
 }

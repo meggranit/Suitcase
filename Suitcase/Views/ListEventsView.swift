@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListEventsView: View {
 
-    @Binding var tripID: String?
+    @State var tripID: String?
     
     //@ObservedObject var planListVM = PlanListViewModel()
     @State var searchText = ""
@@ -17,7 +17,7 @@ struct ListEventsView: View {
     
     var body: some View {
         Text("List plans ")
-       
+        Text("\(tripID!)")
         VStack {
             NavigationLink(destination: NewEventView()) {
                 Text("Add")
@@ -65,6 +65,6 @@ struct ListEventsView: View {
 struct ListEventsView_Previews: PreviewProvider {
     @State static var customBinding = Plan(id: "12", eventName: "name", eventDescription: "description", addedBy: "userID", startDate: "123", endDate: "123")
     static var previews: some View {
-        ListEventsView(tripID: $customBinding.documentID)
+        ListEventsView(tripID: "$customBinding.id")
     }
 }

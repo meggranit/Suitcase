@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct MyTripsView: View {
-    
+    @StateObject var locationViewModel = LocationViewModel()
     @ObservedObject var tripListVM = TripListViewModel()
     @ObservedObject var userVM = LoginViewModel()
     @State var searchText = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack {
-            NavigationLink(destination: NewTripView(name: "", location: "", startDate: Date(), endDate: Date())) {
+            NavigationLink(destination: NewTripView(name: "", location: "", startDate: Date(), endDate: Date())
+                .environmentObject(locationViewModel)) {
                 Text("Add")
                 
             }
-            NavigationView {
+            
                 List($tripListVM.filteredTrips, id: \.id) {$trip in
                 NavigationLink(destination: SelectedTripView(trip: $trip)) {
                     TripRowView(trip: $trip)
                 }
-            }
+            
             .listStyle(.plain)
             .navigationTitle("My Trips")
             .navigationBarHidden(false)

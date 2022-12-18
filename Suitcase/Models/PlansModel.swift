@@ -40,7 +40,7 @@ class PlansModel {
     }
     
     
-    func findPlan (withID id: String, completionHandler: @escaping (Bool,Plan?) -> Void) {
+    func findPlan (withID id: String, completionHandler: @escaping (Bool, Plan?) -> Void) {
         var plan: Plan?
         let docRef = Firestore.firestore().collection("users/\(userID)/Trips/\(tripID)/Plans").document(id)
 
@@ -167,15 +167,18 @@ class PlansModel {
     func observeAllPlans () {
         
         Firestore.firestore().collection("users/\(userID)/Trips/\(tripID)/Plans").addSnapshotListener { (querySnapshot, err) in
-            
+     
             if let err = err {
                 print("Error getting documents: \(err)")
+   
             } else {
+            
                 self.plans = []
                 self.plansFiltered = []
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
                     if let aPlan = Plan(data: document.data(), documentID: document.documentID) {
+                       
                         print (aPlan)
                         self.plans.append(aPlan)
                     }
@@ -186,6 +189,7 @@ class PlansModel {
                 print("Getting filtered plans: \(self.plansFiltered)")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kPlanInfoUpdated), object: self)
                 print("Getting plans: \(self.plans)")
+             
             }
         }
        

@@ -21,6 +21,9 @@
 		0C646A21292DC1E30012F40F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C646A20292DC1E30012F40F /* GoogleService-Info.plist */; };
 		0C7C70A7294AA3BD0029A0F6 /* MemberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */; };
 		0C921F02294E2EB400CD2A76 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C921F01294E2EB400CD2A76 /* ChatView.swift */; };
+		0C921F04294EA47600CD2A76 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C921F03294EA47600CD2A76 /* MessageBubble.swift */; };
+		0C921F06294EA48500CD2A76 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C921F05294EA48500CD2A76 /* MessageField.swift */; };
+		0C921F08294EA4F000CD2A76 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C921F07294EA4F000CD2A76 /* ChatViewModel.swift */; };
 		0C9CB6A1292D30A5006CF7AD /* SuitcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9CB6A0292D30A5006CF7AD /* SuitcaseApp.swift */; };
 		0C9CB6A5292D30A7006CF7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9CB6A4292D30A7006CF7AD /* Assets.xcassets */; };
 		0C9CB6A8292D30A7006CF7AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9CB6A7292D30A7006CF7AD /* Preview Assets.xcassets */; };
@@ -74,6 +77,9 @@
 		0C646A20292DC1E30012F40F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailView.swift; sourceTree = "<group>"; };
 		0C921F01294E2EB400CD2A76 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		0C921F03294EA47600CD2A76 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		0C921F05294EA48500CD2A76 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
+		0C921F07294EA4F000CD2A76 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		0C9CB69D292D30A5006CF7AD /* Suitcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Suitcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9CB6A0292D30A5006CF7AD /* SuitcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseApp.swift; sourceTree = "<group>"; };
 		0C9CB6A4292D30A7006CF7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				0C921F01294E2EB400CD2A76 /* ChatView.swift */,
+				0C921F03294EA47600CD2A76 /* MessageBubble.swift */,
+				0C921F05294EA48500CD2A76 /* MessageField.swift */,
+				0C921F07294EA4F000CD2A76 /* ChatViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 			files = (
 				0C5F0F22294E0B1D0007BBDF /* PlanListViewModel.swift in Sources */,
 				0C3A4D172944D35B000FEEEF /* MemberRowView.swift in Sources */,
+				0C921F06294EA48500CD2A76 /* MessageField.swift in Sources */,
 				0C21E2E1293F90180071B8EC /* PlansRowView.swift in Sources */,
 				0CCBB318294BE26A00ABC4C7 /* LocationViewModel.swift in Sources */,
 				0C921F02294E2EB400CD2A76 /* ChatView.swift in Sources */,
@@ -357,6 +367,7 @@
 				0CCBB312294BD5BA00ABC4C7 /* LocationListView.swift in Sources */,
 				0C9CB6BA292D3123006CF7AD /* ListMembersView.swift in Sources */,
 				0C9CB6C0292D3147006CF7AD /* EditTripView.swift in Sources */,
+				0C921F04294EA47600CD2A76 /* MessageBubble.swift in Sources */,
 				0C9CB6C2292D3151006CF7AD /* EditEventView.swift in Sources */,
 				0C9CB6B0292D30E3006CF7AD /* RegisterView.swift in Sources */,
 				0C21E2D5293EAEC30071B8EC /* PlansModel.swift in Sources */,
@@ -375,6 +386,7 @@
 				0C9CB6A1292D30A5006CF7AD /* SuitcaseApp.swift in Sources */,
 				0CCBB31D294C0B0500ABC4C7 /* LoginViewModel.swift in Sources */,
 				0CCBB327294C1CE100ABC4C7 /* TripDetailViewModel.swift in Sources */,
+				0C921F08294EA4F000CD2A76 /* ChatViewModel.swift in Sources */,
 				0CCBB329294C2AC300ABC4C7 /* NewTripViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +525,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,7 +556,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

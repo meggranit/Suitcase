@@ -14,6 +14,7 @@ struct NewEventView: View {
     @State private var description: String = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
+    @State private var userID = UserModel.shared.currentUserRef
     
     let newPlanVM = NewPlanViewModel()
     var body: some View {
@@ -53,7 +54,7 @@ struct NewEventView: View {
                 )
             .padding(.horizontal, 50.0)
             .padding(.bottom, 40.0)
-            Button(action: { newPlanVM.addPlan(id: "", eventName: "", eventDescription: "", addedBy: "", startDate: "", endDate: "")  }) {
+            Button(action: { newPlanVM.addPlan(id: "", eventName: "", eventDescription: "", addedBy:"\(userID)", startDate: "", endDate: "")  }) {
                 Text("add")
                     .foregroundColor(Color.white)
                     .padding(.vertical, 10)
