@@ -18,6 +18,8 @@ struct NewTripView: View {
     @State var endDate: Date
     
     let newTripVM = NewTripViewModel()
+    var trip: Trip
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
@@ -57,7 +59,7 @@ struct NewTripView: View {
                 
                 
                 Button(action: {
-                    newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: (locationViewModel.selectedLocationCoordinate?.longitude.formatted())!, latitude: (locationViewModel.selectedLocationCoordinate?.latitude.formatted())!, startDate: startDate.formatted(), endDate: endDate.formatted())
+                    newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: (locationViewModel.selectedLocationCoordinate?.longitude.formatted())!, latitude: (locationViewModel.selectedLocationCoordinate?.latitude.formatted())!, startDate: startDate.formatted(), endDate: endDate.formatted(), selectedTrip: trip.documentID!)
                     self.presentationMode.wrappedValue.dismiss()
                     //newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: locationViewModel.selectedLocationCoordinate?.longitude, latitude: locationViewModel.selectedLocationCoordinate?.latitude, startDate: startDate, endDate: endDate)
                 }) {
@@ -110,6 +112,6 @@ struct NewTripView: View {
 
 struct NewTripView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTripView(name: "", location: "", startDate: Date(), endDate: Date())
+        NewTripView(name: "", location: "", startDate: Date(), endDate: Date(), trip: Trip(id: "234", tripName: "name", longitude: "123", latitude: "123", startDate: "1234", endDate: "123"))
     }
 }

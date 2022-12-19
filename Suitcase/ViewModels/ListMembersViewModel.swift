@@ -9,11 +9,13 @@ import Foundation
 
 class ListMembersViewModel: ObservableObject {
     var userModel = UserModel.shared
+    var selectedTrip: String
     
     @Published var users: [User] = []
     @Published var filteredUsers:[User] = []
     
-    init() {
+    init(selectedTrip: String) {
+        self.selectedTrip = selectedTrip
         users = userModel.users
         filteredUsers = userModel.users
         userModel.observeAllUsers()

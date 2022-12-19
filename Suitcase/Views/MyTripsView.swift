@@ -15,7 +15,7 @@ struct MyTripsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack {
-            NavigationLink(destination: NewTripView(name: "", location: "", startDate: Date(), endDate: Date())
+            NavigationLink(destination: NewTripView(name: "", location: "", startDate: Date(), endDate: Date(), trip: Trip(id: "", tripName: "", longitude: "", latitude: "", startDate: "", endDate: ""))
                 .environmentObject(locationViewModel)) {
                 Text("Add")
                 

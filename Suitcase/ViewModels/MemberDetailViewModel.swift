@@ -11,5 +11,9 @@ class MemberDetailViewModel: ObservableObject {
     
     let memberm = UserModel.shared
     
+    func addMember(user: User, selectedTrip: String){
+        memberm.addUserToTrip(user: user, docID: selectedTrip)
+    }
+    
     
 }

@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ListMembersView: View {
     
-    @ObservedObject var listmembersvm = ListMembersViewModel()
+    @ObservedObject var listmembersvm:  ListMembersViewModel
     @State var searchText = ""
+    var trip: Trip
+    
+    init(trip: Trip){
+        self.trip = trip
+        listmembersvm = ListMembersViewModel(selectedTrip: trip.documentID!)
+    }
     
     var body: some View {
         NavigationView{
@@ -40,6 +46,6 @@ struct ListMembersView: View {
 
 struct ListMembersView_Previews: PreviewProvider {
     static var previews: some View {
-        ListMembersView()
+        ListMembersView(trip: Trip(id: "123", tripName: "name", longitude: "234", latitude: "123", startDate: "123", endDate: "123"))
     }
 }

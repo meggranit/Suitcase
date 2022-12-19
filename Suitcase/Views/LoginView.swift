@@ -33,7 +33,7 @@ struct LoginView: View {
                 .autocapitalization(.none)
                 .textFieldStyle(.roundedBorder)
                 .padding(5)
-                .padding(.horizontal, 80.0)
+                .padding(.horizontal, 50.0)
                 .padding(.bottom, 20.0)
                 
                 SecureField(
@@ -44,7 +44,7 @@ struct LoginView: View {
                 .autocapitalization(.none)
                 .textFieldStyle(.roundedBorder)
                 .padding(5)
-                .padding(.horizontal, 80.0)
+                .padding(.horizontal, 50.0)
                 .padding(.bottom, 25.0)
                 Button {
                     guard !email.isEmpty, !password.isEmpty else {
