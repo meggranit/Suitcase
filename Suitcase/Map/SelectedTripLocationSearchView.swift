@@ -10,10 +10,9 @@ import SwiftUI
 struct SelectedTripLocationSearchView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
     @Binding var trip: Trip
-    
     var body: some View {
         HStack {
-            Text("\(trip.tripName)")
+            Text(locationViewModel.results.first?.title ?? "No Location")
                     .foregroundColor(Color(.darkGray))
                     .padding(.horizontal, 30)
             

@@ -20,6 +20,8 @@ struct SelectedTripView: View {
         
         ZStack{
             VStack{
+                SelectedTripMapRepresentable(trip: $trip)
+                    .frame(height: 180)
                 Spacer()
                 Text(trip.tripName)
                 Text(trip.documentID!)
@@ -74,29 +76,9 @@ struct SelectedTripView: View {
                 .padding()
                 
             }
+                
+           
             
-            
-            if !showLocationSearchView {
-                LocationListView(showLocationSearchView: $showLocationSearchView)
-            } else {
-                VStack{
-                    ZStack{
-                        SelectedTripMapRepresentable(trip: $trip)
-                            .frame(height: 180)
-                       
-
-                        
-                    }
-                    Spacer()
-                }
-            }
-            
-            VStack{
-                MapButton(showLocationSearchView: $showLocationSearchView)
-                    .padding(.leading)
-                    .padding(.top, 4)
-                Spacer()
-            }
             
         }
     }
