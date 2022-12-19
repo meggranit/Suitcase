@@ -11,7 +11,7 @@ struct SelectedTripView: View {
     
     //@EnvironmentObject var userViewModel : UserViewModel
     @State private var showLocationSearchView = true
-    //@StateObject var locationViewModel: LocationViewModel
+    @StateObject var locationViewModel = LocationViewModel()
     @StateObject var tdvm = TripDetailViewModel()
     @Binding var trip: Trip
     
@@ -25,6 +25,7 @@ struct SelectedTripView: View {
                 Text(trip.documentID!)
                 NavigationLink {
                     EditTripView(trip: $trip)
+                        .environmentObject(locationViewModel)
                 } label: {
                     Label("Edit Trip", systemImage: "edit" )
                         .foregroundColor(Color.white)
@@ -74,22 +75,16 @@ struct SelectedTripView: View {
                 
             }
             
-            /*
+            
             if !showLocationSearchView {
                 LocationListView(showLocationSearchView: $showLocationSearchView)
             } else {
                 VStack{
                     ZStack{
-                        MapRepresentable()
+                        SelectedTripMapRepresentable(trip: $trip)
                             .frame(height: 180)
-                        LocationSearchView()
-                            .padding(.top, 72)
-                            .onTapGesture {
-                                withAnimation(.spring()) {
-                                    showLocationSearchView.toggle()
-                                }
-                            }
-                            .padding(.top, 50)
+                       
+
                         
                     }
                     Spacer()
@@ -102,7 +97,7 @@ struct SelectedTripView: View {
                     .padding(.top, 4)
                 Spacer()
             }
-            */
+            
         }
     }
 }

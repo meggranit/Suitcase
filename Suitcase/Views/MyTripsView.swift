@@ -22,7 +22,8 @@ struct MyTripsView: View {
             }
             
                 List($tripListVM.filteredTrips, id: \.id) {$trip in
-                NavigationLink(destination: SelectedTripView(trip: $trip)) {
+                NavigationLink(destination: SelectedTripView(trip: $trip)
+                    .environmentObject(locationViewModel)) {
                     TripRowView(trip: $trip)
                 }
             
