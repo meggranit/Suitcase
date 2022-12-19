@@ -12,41 +12,25 @@ import FirebaseCore
 import FirebaseFirestoreSwift
 
 class ChatViewModel: ObservableObject {
-    @Published private(set) var messages: [Chat] = []
-    @Published private(set) var lastMessageID = ""
+    var chatModel = ChatModel.shared
+    var tripModel = TripModel.shared
+    var selectedTrip: String
+    
+    @Published var messages: [Chat] = []
     let db = Firestore.firestore()
     
-    init() {
-        getMessages()
+    init(selectedTrip: String) {
+        self.selectedTrip = selectedTrip
+        messages = chatModel.messages
+        chatModel.observeAllMessages(selectedTrip: selectedTrip)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: Notification.Name(kChatInfoUpdated), object: nil)
     }
     
-    func getMessages(){
-        db.collection("/users/mWQXNGdncm2dpAzyQeUr/Trips/hElJ2J8wxcXNZDiIHMLa/Chat").addSnapshotListener { querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                print("error fetching documents: \(String(describing: error))")
-                return
-            }
-            self.messages = documents.compactMap { document -> Chat? in
-                do {
-                    return try document.data(as: Chat.self)
-                } catch {
-                    print("error decoding document into message: \(error)")
-                    return nil
-                }
-            }
-            self.messages.sort { $0.sentAt < $1.sentAt }
-            if let id = self.messages.last?.id {
-                self.lastMessageID = id
-            }
-        }
+    @objc
+    
+    func updateList() {
+        messages = chatModel.messages
     }
     
-    func sendMessage(text: String) {
-        do {
-            let newMessage = Chat(id: "\(UUID())", messageText: text, received: false, sentAt: Date(), sentBy: "mWQXNGdncm2dpAzyQeUr")
-            try db.collection("/users/mWQXNGdncm2dpAzyQeUr/Trips/hElJ2J8wxcXNZDiIHMLa/Chat").document().setData(from: newMessage)
-        } catch {
-            print("error adding message to firestore: \(error)")
-        }
-    }
 }
+

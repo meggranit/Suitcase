@@ -9,15 +9,25 @@ import SwiftUI
 
 struct MemberDetailView: View {
     
+    @StateObject var mdvm = MemberDetailViewModel()
+    @Binding var user: User
+    
+    
     var body: some View {
-      Text("Member Detail")
+        VStack {
+            Text(user.name)
+            Text(user.email)
+            Button(action: {return}) {
+                Text("Add to trip")
+            }
+        }
     }
 }
 
 struct MemberDetailView_Previews:
     PreviewProvider {
-
+@State static var customBinding = User(id: "123", name: "name", email: "name@email")
         static var previews: some View {
-            MemberDetailView()
+            MemberDetailView(user: $customBinding)
         }
 }

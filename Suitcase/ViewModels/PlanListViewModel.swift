@@ -11,14 +11,16 @@ class PlanListViewModel: ObservableObject {
     
     
     var planModel = PlansModel.shared
+    var selectedTrip: String
     
     @Published var plans:[Plan] = []
     @Published var filteredPlans:[Plan] = []
     
-    init() {
+    init(selectedTrip: String) {
+        self.selectedTrip = selectedTrip
         plans = planModel.plans
         filteredPlans = planModel.plans
-       planModel.observeAllPlans()
+        planModel.observeAllPlans(selectedTrip: selectedTrip)
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: Notification.Name(kPlanInfoUpdated), object: nil)
         
     }

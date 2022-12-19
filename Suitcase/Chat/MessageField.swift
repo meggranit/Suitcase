@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct MessageField: View {
-    @EnvironmentObject var chatViewModel: ChatViewModel
-       @State private var message = ""
-       
+    @ObservedObject var chatViewModel: ChatViewModel
+       @State  var message = ""
+    let newMessageVM = NewMessageViewModel()
+    var trip: Trip
+    
+    init(trip: Trip){
+        self.trip = trip
+        chatViewModel = ChatViewModel(selectedTrip: trip.documentID!)
+    }
        var body: some View {
            HStack{
                CustomTextField(placeholder: Text("Enter your message here"), text: $message)
                Button{
-                   chatViewModel.sendMessage(text: message)
+                   newMessageVM.addMessage(id: UUID().uuidString, messageText: message, sentAt: Date().formatted(), selectedTrip: trip.documentID!)
+                   //chatViewModel.sendMessage(text: message)
                    message = ""
                } label : {
                    Image(systemName: "paperplane.fill")
@@ -35,8 +42,8 @@ struct MessageField: View {
 
 struct MessageField_Previews: PreviewProvider {
     static var previews: some View {
-        MessageField()
-                    .environmentObject(ChatViewModel())
+        MessageField(trip: Trip(id: "123", tripName: "name", longitude: "13", latitude: "12", startDate: "123", endDate: "123"))
+            
     }
 }
 struct CustomTextField: View {

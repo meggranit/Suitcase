@@ -10,6 +10,5 @@ import Foundation
 class TripDetailViewModel: ObservableObject {
     
     let tm = TripModel.shared
-    
-    
+   
 }

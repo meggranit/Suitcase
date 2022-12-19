@@ -38,8 +38,9 @@ struct SelectedTripView: View {
                 .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
                 .cornerRadius(15)
                 .padding()
+                
                 NavigationLink {
-                    ChatView()
+                    ChatView(trip: trip)
                 } label: {
                     Label("Chat", systemImage: "message" )
                         .foregroundColor(Color.white)
@@ -50,6 +51,7 @@ struct SelectedTripView: View {
                 .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
                 .cornerRadius(15)
                 .padding()
+                /*
                 NavigationLink {
                     ListEventsView(tripID: trip.documentID)
                 } label: {
@@ -74,7 +76,7 @@ struct SelectedTripView: View {
                 .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
                 .cornerRadius(15)
                 .padding()
-                
+                */
             }
                 
            

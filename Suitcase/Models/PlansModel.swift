@@ -110,7 +110,7 @@ class PlansModel {
   
     func addPlan(plan: Plan, docID: String) {
         print ("\(docID)")
-        Firestore.firestore().collection("users/\(userID)/Trips/\(tripID)/Plans").document(docID).setData(plan.asDictionary()) {err in
+        Firestore.firestore().collection("users/\(userID)/Trips/\(docID)/Plans").addDocument(data: plan.asDictionary()) {err in
             if let err = err {
                 print ("error adding document \(err)")
             } else {
@@ -164,9 +164,9 @@ class PlansModel {
         
     }
     
-    func observeAllPlans () {
+    func observeAllPlans (selectedTrip: String) {
         
-        Firestore.firestore().collection("users/\(userID)/Trips/\(tripID)/Plans").addSnapshotListener { (querySnapshot, err) in
+        Firestore.firestore().collection("users/\(userID)/Trips/\(selectedTrip)/Plans").addSnapshotListener { (querySnapshot, err) in
      
             if let err = err {
                 print("Error getting documents: \(err)")
