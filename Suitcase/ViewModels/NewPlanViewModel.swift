@@ -10,9 +10,9 @@ import Foundation
 class NewPlanViewModel {
     let planModel = PlansModel.shared
     
-    func addPlan(id: String, eventName: String, eventDescription: String, addedBy: String, startDate: String, endDate: String ){
+    func addPlan(id: String, eventName: String, eventDescription: String, addedBy: String, startDate: String, endDate: String, selectedTrip: String){
         let plan = Plan(id: id, eventName: eventName, eventDescription: eventDescription, addedBy: addedBy, startDate: startDate, endDate: endDate)
-        planModel.addPlan(plan: plan, docID: id)
+        planModel.addPlan(plan: plan, docID: selectedTrip)
     }
     
     func findPlan(search: String) -> Plan? {

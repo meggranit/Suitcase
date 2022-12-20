@@ -21,14 +21,14 @@ struct MessageBubble: View {
 
         @State private var showTime = false
         var body: some View {
-            VStack(alignment: message.sentBy == userModel.currentUserRef ? .leading : .trailing) {
+            VStack(alignment: message.sentBy != userModel.currentUserRef ? .leading : .trailing) {
                 HStack{
                     Text(message.messageText)
                         .padding()
-                        .background(message.sentBy == userModel.currentUserRef ? Color("LightTan") : Color("LightBlue"))
+                        .background(message.sentBy != userModel.currentUserRef ? Color("LightTan") : Color("LightBlue"))
                         .cornerRadius(30)
                 }
-                .frame(maxWidth: 300, alignment: message.sentBy == userModel.currentUserRef ? .leading : .trailing)
+                .frame(maxWidth: 300, alignment: message.sentBy != userModel.currentUserRef ? .leading : .trailing)
                 .onTapGesture {
                     showTime.toggle()
                 }
@@ -36,10 +36,10 @@ struct MessageBubble: View {
                     Text(message.sentAt)
                         .font(.caption2)
                         .foregroundColor(.gray)
-                        .padding(message.sentBy == userModel.currentUserRef ? .leading : .trailing, 25)
+                        .padding(message.sentBy != userModel.currentUserRef ? .leading : .trailing, 25)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: message.sentBy == userModel.currentUserRef ? .leading : .trailing)
+            .frame(maxWidth: .infinity, alignment: message.sentBy != userModel.currentUserRef ? .leading : .trailing)
             .padding(.horizontal, 10)
         }
 }

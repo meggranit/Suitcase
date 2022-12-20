@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct NewEventView: View {
+    @ObservedObject var planListViewModel: PlanListViewModel
     
-    
-    @State private var name: String = ""
-    @State private var description: String = ""
-    @State private var startDate = Date()
-    @State private var endDate = Date()
-    @State private var userID = UserModel.shared.currentUserRef
+    @State var name: String = ""
+    @State var description: String = ""
+    @State var startDate = Date()
+    @State var endDate = Date()
+    @State var userID = UserModel.shared.currentUserRef
     
     let newPlanVM = NewPlanViewModel()
+    var trip: Trip
+    
+    init(trip: Trip){
+        self.trip = trip
+        planListViewModel = PlanListViewModel(selectedTrip: trip.documentID!)
+    }
+    
+    
     var body: some View {
         VStack{
             Text("New Plan")
@@ -54,7 +62,7 @@ struct NewEventView: View {
                 )
             .padding(.horizontal, 50.0)
             .padding(.bottom, 40.0)
-            Button(action: { newPlanVM.addPlan(id: "", eventName: "", eventDescription: "", addedBy:"\(userID)", startDate: "", endDate: "")  }) {
+            Button(action: { newPlanVM.addPlan(id: UUID().uuidString, eventName: name, eventDescription: description, addedBy:"\(userID)", startDate: startDate.formatted(), endDate: endDate.formatted(), selectedTrip: trip.documentID!)  }) {
                 Text("add")
                     .foregroundColor(Color.white)
                     .padding(.vertical, 10)
@@ -70,6 +78,6 @@ struct NewEventView: View {
 
 struct NewEventView_Previews: PreviewProvider {
     static var previews: some View {
-        NewEventView()
+        NewEventView(trip: Trip(id: "13", tripName: "name", longitude: "123", latitude: "123", startDate: "1234", endDate: "123"))
     }
 }

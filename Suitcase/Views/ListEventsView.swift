@@ -19,10 +19,12 @@ struct ListEventsView: View {
         Text("List plans ")
         Text("\(tripID!)")
         VStack {
-            NavigationLink(destination: NewEventView()) {
+            /*
+            NavigationLink(destination: NewEventView(trip: Trip(id: "", tripName: "", longitude: "", latitude: "", startDate: "", endDate: ""))) {
                 Text("Add")
                 
             }
+             */
             NavigationView {
                 /*
                 List($planListVM.filteredPlans, id: \.id) {$plan in
