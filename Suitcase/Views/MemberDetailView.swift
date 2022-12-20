@@ -19,13 +19,14 @@ struct MemberDetailView: View {
         self.trip = trip
         mdvm = MemberDetailViewModel(selectedTrip: trip.documentID!)
     }
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack {
             Text(user.name)
             Text(user.email)
             Button(action: {
                 newMemberVM.addMember(user: user, selectedTrip: trip.documentID!)
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Add to trip")
             }

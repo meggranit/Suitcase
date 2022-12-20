@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct EditTripView: View {
-    @StateObject var tdvm = TripDetailViewModel()
+    //@StateObject var tdvm = TripDetailViewModel()
+    let newTripVM = NewTripViewModel()
     @Binding var trip: Trip
     @State private var name: String = ""
     @State private var latitude: String = ""
     @State private var longitude: String = ""
     @State private var startDate = ""
     @State private var endDate = ""
-    
    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         
         ZStack {
@@ -82,7 +84,7 @@ struct EditTripView: View {
                 .padding(.horizontal, 50.0)
                 .padding(.bottom, 40.0)
                  */
-                Button(action: { return }) {
+                Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
                     Text("update")
                         .foregroundColor(Color.white)
                         .padding(.vertical, 10)
@@ -94,7 +96,6 @@ struct EditTripView: View {
                 Spacer()
             }
         }
-        MapRepresentable()
     }
 }
 

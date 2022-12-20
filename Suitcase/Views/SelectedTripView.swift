@@ -22,9 +22,8 @@ struct SelectedTripView: View {
             VStack{
                 SelectedTripMapRepresentable(trip: $trip)
                     .frame(height: 180)
-                Spacer()
                 Text(trip.tripName)
-                Text(trip.documentID!)
+                    .font(.title)
                 NavigationLink {
                     EditTripView(trip: $trip)
                         .environmentObject(locationViewModel)
@@ -53,7 +52,7 @@ struct SelectedTripView: View {
                 .padding()
                 
                 NavigationLink {
-                    ListEventsView(tripID: trip.documentID)
+                    ListEventsView(trip: trip)
                 } label: {
                     Label("Plans", systemImage: "calendar")
                         .foregroundColor(Color.white)
@@ -76,7 +75,8 @@ struct SelectedTripView: View {
                 .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
                 .cornerRadius(15)
                 .padding()
-               
+                
+                Spacer()
             }
                 
            

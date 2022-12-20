@@ -24,6 +24,7 @@ struct NewEventView: View {
         planListViewModel = PlanListViewModel(selectedTrip: trip.documentID!)
     }
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         VStack{
@@ -62,7 +63,9 @@ struct NewEventView: View {
                 )
             .padding(.horizontal, 50.0)
             .padding(.bottom, 40.0)
-            Button(action: { newPlanVM.addPlan(id: UUID().uuidString, eventName: name, eventDescription: description, addedBy:"\(userID)", startDate: startDate.formatted(), endDate: endDate.formatted(), selectedTrip: trip.documentID!)  }) {
+            Button(action: { newPlanVM.addPlan(id: UUID().uuidString, eventName: name, eventDescription: description, addedBy:"\(userID)", startDate: startDate.formatted(), endDate: endDate.formatted(), selectedTrip: trip.documentID!)
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
                 Text("add")
                     .foregroundColor(Color.white)
                     .padding(.vertical, 10)

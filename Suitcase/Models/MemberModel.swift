@@ -26,7 +26,6 @@ class MemberModel {
     }
     
     func observeAllMembers (selectedTrip: String) {
-        print("DEBUG: running observerAllMessages()")
         Firestore.firestore().collection("users/\(userID)/Trips/\(selectedTrip)/Friends").addSnapshotListener { (querySnapshot, err) in
             
             if let err = err {
@@ -43,7 +42,7 @@ class MemberModel {
                     
                 }
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kMemberInfoUpdated), object: self)
-                print("Getting members: \(self.members)")
+               
             }
         }
        
