@@ -8,17 +8,10 @@
 import SwiftUI
 
 struct PlansRowView: View {
-    var plan: Plan
-    var trip: Trip
-    @ObservedObject var planListVM: PlanListViewModel
+    @Binding var plan: Plan
     let userModel = UserModel.shared
     
-    init(plan: Plan, trip: Trip) {
-        self.plan = plan
-        self.trip = trip
-        planListVM = PlanListViewModel(selectedTrip: trip.documentID!)
-        
-    }
+    
     
     var body: some View {
         VStack{
@@ -41,7 +34,8 @@ struct PlansRowView: View {
 }
 
 struct PlansRowView_Previews: PreviewProvider {
+   @State static var customBinding = Plan(id: "123", eventName: "123", eventDescription: "123", addedBy: "123", startDate: "23", endDate: "123")
     static var previews: some View {
-        PlansRowView(plan: Plan(id: "123", eventName: "name", eventDescription: "1234", addedBy: "123", startDate: "123", endDate: "123"), trip: Trip(id: "123", tripName: "123", longitude: "123", latitude: "123", startDate: "123", endDate: "123"))
+        PlansRowView(plan: $customBinding)
     }
 }

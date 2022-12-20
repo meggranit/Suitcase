@@ -21,6 +21,6 @@ class NewTripViewModel {
     
     func updateTrip(trip: Trip) {
         print("updateVM")
-        tripModel.updateTrip(trip: trip)
+        tripModel.updateTripDoc(trip: trip, docID: trip.documentID!)
     }
 }

@@ -24,11 +24,18 @@ struct MemberDetailView: View {
         VStack {
             Text(user.name)
             Text(user.email)
+            
             Button(action: {
                 newMemberVM.addMember(user: user, selectedTrip: trip.documentID!)
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Add to trip")
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 15)
+                    .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
+                    .cornerRadius(15)
+                .foregroundColor(.white)
+                
             }
         }
     }

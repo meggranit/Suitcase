@@ -84,7 +84,9 @@ struct EditTripView: View {
                 .padding(.horizontal, 50.0)
                 .padding(.bottom, 40.0)
                  */
-                Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+                Button(action: {
+                    newTripVM.updateTrip(trip: $trip.wrappedValue)
+                    self.presentationMode.wrappedValue.dismiss() }) {
                     Text("update")
                         .foregroundColor(Color.white)
                         .padding(.vertical, 10)

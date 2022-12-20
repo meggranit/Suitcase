@@ -35,15 +35,13 @@ struct ListEventsView: View {
             .cornerRadius(15)
             .padding()
             .padding(.top, 50)
-            ScrollViewReader { proxy in
-                ScrollView {
-                    ForEach(planListVM.plans, id: \.id) { plan in
-                        PlansRowView(plan: plan, trip: trip)
-                    }
+            List($planListVM.plans, id: \.id ) { $plan in
+                NavigationLink(destination: EditEventView(plan: $plan)){
+                    PlansRowView(plan: $plan)
                 }
-                .padding(.top, 10)
-                .background(.white)
             }
+            
+          
             
             
             
