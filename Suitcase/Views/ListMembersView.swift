@@ -19,10 +19,11 @@ struct ListMembersView: View {
     }
     
     var body: some View {
+        
         NavigationView{
-            List($listmembersvm.filteredUsers, id: \.id) { $user in
-                NavigationLink(destination: MemberDetailView(user: $user)) {
-                    MemberRowView(thisUser: $user)
+            List(listmembersvm.filteredUsers, id: \.id) { user in
+                NavigationLink(destination: MemberDetailView(user: user, trip: trip)) {
+                    MemberRowView(thisUser: user)
                 }
             }
             .listStyle(.plain)

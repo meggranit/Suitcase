@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MemberRowView: View {
     
-    @Binding var thisUser: User
+    var thisUser: User
+    
+    init(thisUser: User){
+        self.thisUser = thisUser
+    }
     
     var body: some View {
         VStack(alignment: .leading){
@@ -23,6 +27,6 @@ struct MemberRowView: View {
 struct MemberRowView_Previews: PreviewProvider {
     @State static var customBinding = User(id: "123", name: "name", email: "name@email.com")
     static var previews: some View {
-        MemberRowView(thisUser: $customBinding)
+        MemberRowView(thisUser: customBinding)
     }
 }

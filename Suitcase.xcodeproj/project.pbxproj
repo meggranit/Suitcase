@@ -20,6 +20,11 @@
 		0C3A4D192944D772000FEEEF /* SelectedTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A4D182944D772000FEEEF /* SelectedTripView.swift */; };
 		0C47042629500E3200CB1E9E /* ListMembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47042529500E3200CB1E9E /* ListMembersViewModel.swift */; };
 		0C470428295010BD00CB1E9E /* MemberDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C470427295010BD00CB1E9E /* MemberDetailViewModel.swift */; };
+		0C515E772951425A001A793D /* NewMemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C515E762951425A001A793D /* NewMemberViewModel.swift */; };
+		0C515E79295142C4001A793D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C515E78295142C4001A793D /* Member.swift */; };
+		0C515E7B2951437F001A793D /* MemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C515E7A2951437F001A793D /* MemberModel.swift */; };
+		0C515E7D2951480E001A793D /* ListAddedMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C515E7C2951480E001A793D /* ListAddedMembersView.swift */; };
+		0C515E7F29514890001A793D /* ListAddedMembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C515E7E29514890001A793D /* ListAddedMembersViewModel.swift */; };
 		0C5F0F1C294E06590007BBDF /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F1B294E06590007BBDF /* Plan.swift */; };
 		0C5F0F1E294E0A280007BBDF /* NewPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F1D294E0A280007BBDF /* NewPlanViewModel.swift */; };
 		0C5F0F20294E0AE80007BBDF /* PlanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0F1F294E0AE80007BBDF /* PlanDetailViewModel.swift */; };
@@ -82,6 +87,11 @@
 		0C3A4D182944D772000FEEEF /* SelectedTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTripView.swift; sourceTree = "<group>"; };
 		0C47042529500E3200CB1E9E /* ListMembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMembersViewModel.swift; sourceTree = "<group>"; };
 		0C470427295010BD00CB1E9E /* MemberDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewModel.swift; sourceTree = "<group>"; };
+		0C515E762951425A001A793D /* NewMemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMemberViewModel.swift; sourceTree = "<group>"; };
+		0C515E78295142C4001A793D /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		0C515E7A2951437F001A793D /* MemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberModel.swift; sourceTree = "<group>"; };
+		0C515E7C2951480E001A793D /* ListAddedMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAddedMembersView.swift; sourceTree = "<group>"; };
+		0C515E7E29514890001A793D /* ListAddedMembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAddedMembersViewModel.swift; sourceTree = "<group>"; };
 		0C5F0F1B294E06590007BBDF /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		0C5F0F1D294E0A280007BBDF /* NewPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlanViewModel.swift; sourceTree = "<group>"; };
 		0C5F0F1F294E0AE80007BBDF /* PlanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +227,8 @@
 				0C3A4D142944D109000FEEEF /* UserModel.swift */,
 				0C5F0F1B294E06590007BBDF /* Plan.swift */,
 				0C11F247294FE9D00099C519 /* Chat.swift */,
+				0C515E78295142C4001A793D /* Member.swift */,
+				0C515E7A2951437F001A793D /* MemberModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,6 +270,7 @@
 				0C9CB6C5292D3166006CF7AD /* AddMemberView.swift */,
 				0C3A4D162944D35B000FEEEF /* MemberRowView.swift */,
 				0C7C70A6294AA3BD0029A0F6 /* MemberDetailView.swift */,
+				0C515E7C2951480E001A793D /* ListAddedMembersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +288,8 @@
 				0C5F0F21294E0B1D0007BBDF /* PlanListViewModel.swift */,
 				0C47042529500E3200CB1E9E /* ListMembersViewModel.swift */,
 				0C470427295010BD00CB1E9E /* MemberDetailViewModel.swift */,
+				0C515E762951425A001A793D /* NewMemberViewModel.swift */,
+				0C515E7E29514890001A793D /* ListAddedMembersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -380,16 +395,19 @@
 				0CCBB325294C186C00ABC4C7 /* Trip.swift in Sources */,
 				0C9CB6B8292D3118006CF7AD /* LoginView.swift in Sources */,
 				0CCBB306294BC55300ABC4C7 /* MapView.swift in Sources */,
+				0C515E79295142C4001A793D /* Member.swift in Sources */,
 				0C3A4D192944D772000FEEEF /* SelectedTripView.swift in Sources */,
 				0CD8437F293A6A67009801A8 /* ChatModel.swift in Sources */,
 				0C5F0F1C294E06590007BBDF /* Plan.swift in Sources */,
 				0C5F0F1E294E0A280007BBDF /* NewPlanViewModel.swift in Sources */,
 				0CCBB312294BD5BA00ABC4C7 /* LocationListView.swift in Sources */,
 				0C9CB6BA292D3123006CF7AD /* ListMembersView.swift in Sources */,
+				0C515E7D2951480E001A793D /* ListAddedMembersView.swift in Sources */,
 				0C9CB6C0292D3147006CF7AD /* EditTripView.swift in Sources */,
 				0C921F04294EA47600CD2A76 /* MessageBubble.swift in Sources */,
 				0C9CB6C2292D3151006CF7AD /* EditEventView.swift in Sources */,
 				0C9CB6B0292D30E3006CF7AD /* RegisterView.swift in Sources */,
+				0C515E772951425A001A793D /* NewMemberViewModel.swift in Sources */,
 				0C21E2D5293EAEC30071B8EC /* PlansModel.swift in Sources */,
 				0C9CB6C6292D3166006CF7AD /* AddMemberView.swift in Sources */,
 				0CC846BC292D538400679EEC /* TripRowView.swift in Sources */,
@@ -397,6 +415,7 @@
 				0C9CB6BC292D312E006CF7AD /* ListEventsView.swift in Sources */,
 				0CCBB323294C17E700ABC4C7 /* TripListViewModel.swift in Sources */,
 				0C11F24A294FF6E80099C519 /* NewMessageViewModel.swift in Sources */,
+				0C515E7F29514890001A793D /* ListAddedMembersViewModel.swift in Sources */,
 				0C5F0F20294E0AE80007BBDF /* PlanDetailViewModel.swift in Sources */,
 				0C3A4D152944D109000FEEEF /* UserModel.swift in Sources */,
 				0C7C70A7294AA3BD0029A0F6 /* MemberDetailView.swift in Sources */,
@@ -408,6 +427,7 @@
 				0C11F244294FE3FC0099C519 /* SelectedTripLocationSearchView.swift in Sources */,
 				0C9CB6B4292D30F8006CF7AD /* NewEventView.swift in Sources */,
 				0C9CB6A1292D30A5006CF7AD /* SuitcaseApp.swift in Sources */,
+				0C515E7B2951437F001A793D /* MemberModel.swift in Sources */,
 				0CCBB31D294C0B0500ABC4C7 /* LoginViewModel.swift in Sources */,
 				0CCBB327294C1CE100ABC4C7 /* TripDetailViewModel.swift in Sources */,
 				0C921F08294EA4F000CD2A76 /* ChatViewModel.swift in Sources */,

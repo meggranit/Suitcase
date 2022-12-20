@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct AddMemberView: View {
-   // @ObservedObject userListVM = UserListVM()
+    @ObservedObject var userListVM: ListMembersViewModel
     @State var searchText = ""
+    var trip: Trip
+    
+    init(trip: Trip){
+        self.trip = trip
+        userListVM = ListMembersViewModel(selectedTrip: trip.documentID!)
+    }
     
     
     var body: some View {
-        Text("List members")
+        ScrollView{
+            ForEach(userListVM.users, id: \.id) { user in
+                MemberRowView(thisUser: user)
+            }
+        }
     }
 }
 
 struct AddMemberView_Previews: PreviewProvider {
     static var previews: some View {
-        AddMemberView()
+        AddMemberView(trip: Trip(id: "123", tripName: "name", longitude: "123", latitude: "123", startDate: "123", endDate: "123"))
     }
 }
