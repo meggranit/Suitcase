@@ -10,9 +10,9 @@ import Foundation
 class NewTripViewModel {
     let tripModel = TripModel.shared
     
-    func addTrip(id: String, name: String, longitude: String,  latitude: String,  startDate: String, endDate: String, selectedTrip: String){
+    func addTrip(id: String, name: String, longitude: String,  latitude: String,  startDate: String, endDate: String){
         let trip = Trip(id: id, tripName: name, longitude: longitude, latitude: latitude, startDate: startDate, endDate: endDate)
-        tripModel.addTrip(trip: trip, docID: selectedTrip)
+        tripModel.addTrip(trip: trip)
     }
     
     func findTrip(search: String) -> Trip? {

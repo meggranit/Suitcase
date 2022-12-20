@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemberRowView: View {
-    
+    let memberModel = MemberModel.shared
     var thisUser: User
     
     init(thisUser: User){
@@ -21,7 +21,9 @@ struct MemberRowView: View {
                 .fontWeight(.bold)
             Text(thisUser.email)
         }
+       
     }
+        
 }
 
 struct MemberRowView_Previews: PreviewProvider {

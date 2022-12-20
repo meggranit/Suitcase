@@ -157,9 +157,13 @@ class ChatModel {
                     
                     
                 }
+                self.messages.sort { $0.sentAt < $1.sentAt }
                 self.messagesFiltered = self.messages
+                
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kChatInfoUpdated), object: self)
             }
+            
+                        
         }
        
         
@@ -183,11 +187,13 @@ class ChatModel {
                     
                     
                 }
+                self.messages.sort { $0.sentAt < $1.sentAt }
                 self.messagesFiltered = self.messages
                 print("Getting filtered messages: \(self.messagesFiltered)")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kChatInfoUpdated), object: self)
                 print("Getting messages: \(self.messages)")
             }
+            
         }
        
     }

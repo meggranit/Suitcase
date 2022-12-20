@@ -86,8 +86,11 @@ struct LoginView: View {
                 Spacer()
 
             }
+           
         }
+        
     }
+        
     
 }
 

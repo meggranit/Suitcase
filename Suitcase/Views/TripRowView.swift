@@ -21,9 +21,9 @@ struct TripRowView: View {
             }
             .padding(.horizontal, 20.0)
             HStack{
-                //ext("\(trip.startDate.formatted(.dateTime.hour().minute()))")
+                Text("\(trip.startDate)")
                 Text(" - ")
-                //Text("\(trip.endDate.formatted(.dateTime.hour().minute()))")
+                Text("\(trip.endDate)")
                 Spacer()
             }
             .font(.footnote)

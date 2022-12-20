@@ -47,4 +47,8 @@ class MemberModel {
         }
        
     }
+    
+    func delete(selectedTrip: String, member: User){
+        Firestore.firestore().collection("users/\(userID)/Trips/\(selectedTrip)/Friends").document(member.id).delete()
+    }
 }

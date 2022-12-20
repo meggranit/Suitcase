@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListAddedMembersView: View {
-    
+    let memberModel = MemberModel.shared
     @ObservedObject var listAddedMemberVM: ListAddedMembersViewModel
     var trip: Trip
     
@@ -30,12 +30,18 @@ struct ListAddedMembersView: View {
             .background(Color(red: 0.4470588235294118, green: 0.5843137254901961, blue: 0.6))
             .cornerRadius(15)
         .padding()
+        .padding(.top, 50)
             ScrollViewReader { proxy in
                 ScrollView {
                     ForEach( listAddedMemberVM.members, id: \.id) { member in
                         MemberRowView(thisUser: member)
+
                     }
+                   
+                    
                 }
+                
+                
             }
         }
     }

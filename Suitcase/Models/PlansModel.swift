@@ -156,6 +156,7 @@ class PlansModel {
                     
                     
                 }
+                self.plans.sort {$0.startDate < $1.startDate}
                 self.plansFiltered = self.plans
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kPlanInfoUpdated), object: self)
             }
@@ -185,10 +186,11 @@ class PlansModel {
                     
                     
                 }
+                self.plans.sort {$0.startDate < $1.startDate}
                 self.plansFiltered = self.plans
-                print("Getting filtered plans: \(self.plansFiltered)")
+                //print("Getting filtered plans: \(self.plansFiltered)")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: kPlanInfoUpdated), object: self)
-                print("Getting plans: \(self.plans)")
+                //print("Getting plans: \(self.plans)")
              
             }
         }

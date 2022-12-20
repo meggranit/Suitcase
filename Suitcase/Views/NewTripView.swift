@@ -59,7 +59,7 @@ struct NewTripView: View {
                 
                 
                 Button(action: {
-                    newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: (locationViewModel.selectedLocationCoordinate?.longitude.formatted())!, latitude: (locationViewModel.selectedLocationCoordinate?.latitude.formatted())!, startDate: startDate.formatted(), endDate: endDate.formatted(), selectedTrip: trip.documentID!)
+                    newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: (locationViewModel.selectedLocationCoordinate?.longitude.formatted())!, latitude: (locationViewModel.selectedLocationCoordinate?.latitude.formatted())!, startDate: startDate.formatted(), endDate: endDate.formatted())
                     self.presentationMode.wrappedValue.dismiss()
                     //newTripVM.addTrip(id: UUID().uuidString, name: name, longitude: locationViewModel.selectedLocationCoordinate?.longitude, latitude: locationViewModel.selectedLocationCoordinate?.latitude, startDate: startDate, endDate: endDate)
                 }) {

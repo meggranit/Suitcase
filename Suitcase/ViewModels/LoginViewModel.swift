@@ -31,7 +31,6 @@ class LoginViewModel: ObservableObject {
     
     func logout () {
         try? userModel.auth.signOut()
-        
         self.loggedIn = false
         print("logout successful")
         print(self.userModel.currentUserRef)
