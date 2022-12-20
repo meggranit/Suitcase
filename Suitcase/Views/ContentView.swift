@@ -14,8 +14,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        MyTripsView()
-        /*
+        
         TabView{
             MyTripsView()
                 .tabItem {
@@ -28,7 +27,7 @@ struct ContentView: View {
                 }
             
         }
-         */
+        
     }
 }
 

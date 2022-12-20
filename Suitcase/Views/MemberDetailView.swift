@@ -13,6 +13,8 @@ struct MemberDetailView: View {
     var user: User
     var trip: Trip
     let newMemberVM = NewMemberViewModel()
+    let newInvitedTripVM = NewInvitedTripViewModel()
+    let userModel = UserModel.shared
     
     init(user: User, trip: Trip){
         self.user = user
@@ -27,6 +29,7 @@ struct MemberDetailView: View {
             
             Button(action: {
                 newMemberVM.addMember(user: user, selectedTrip: trip.documentID!)
+                //newInvitedTripVM.addTrip(id: trip.documentID!, userID: userModel.currentUserRef)
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Add to trip")
